@@ -293,14 +293,9 @@ div#footer {
 </div>
     <div class="wrapper">
       <header>
-        <h1>Accountright oauth sample php</h1>
-        <p>This is a quick little example to help you get up and running with OAUTH and PHP when working with the MYOB AccountRight Live API.</p>
-
-      
-        
+        <h1>OAUTH</h1>
+        <p>A little example showing OAUTH in PHP</p>
         <p class="view"><a href="https://github.com/MYOB-Technology/AccountRight_OAUTH_sample_php">View the Project on GitHub <small>MYOB-Technology/AccountRight_OAUTH_sample_php</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/MYOB-Technology/AccountRight_OAUTH_sample_php/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/MYOB-Technology/AccountRight_OAUTH_sample_php/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -308,7 +303,7 @@ div#footer {
         </ul>
         </header>
       <section>
-        <h1>OAUTH with PHP for AccountRight API</h1>
+        <h1>OAUTH with PHP</h1>
 
 <p>A working sample written in PHP showing the OAUTH integration with AccountRight API</p>
 
@@ -327,13 +322,9 @@ div#footer {
         <pre><code>https://secure.myob.com/oauth2/account/authorize?client_id=[YOUR API KEY]&redirect_uri=[YOUR REDIRECT URI]&response_type=code&scope=CompanyFile</code></pre>
         <p class="muted">Note: the redirect uri MUST match the url you supplied when you registered</p>
         <p>To use simply, include the class, create the object and call the apropriate functions.</p>
-        <pre>
-          <code class="php">
-            include_once('includes/class.myob_oauth.php');
-            $oauth = new myob_api_oauth();
-            $oauth_tokens = $oauth->getAccessToken($api_key, $api_secret, $redirect_url, $api_access_code, $api_scope);
-          </code>
-        </pre>
+        <pre><code class="php">include_once('includes/class.myob_oauth.php');
+$oauth = new myob_api_oauth();
+$oauth_tokens = $oauth->getAccessToken($api_key, $api_secret, $redirect_url, $api_access_code, $api_scope);</code></pre>
         <h2>Suggestions</h2>
         <p>We would love it if someone would help us round our our <strong>class.myob_oauth.php</strong> right now it's been quickly put together to get you up and running, it's missing most of the normal error checking, and is pretty primiative.</p>
         <p>Do you know how to write a really robust OAUTH interface class? Feel free to fork this project and add to it.</p>
