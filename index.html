@@ -294,7 +294,32 @@ div#footer {
     <div class="wrapper">
       <header>
         <h1>Accountright oauth sample php</h1>
-        <p>A working sample written in PHP showing the OAUTH integration with AccountRight API</p>
+        <p>This is a quick little example to help you get up and running with OAUTH and PHP when working with the MYOB AccountRight Live API.</p>
+        <h2>Why OAuth?</h2>
+        <p>The AccountRight Live API uses a couple of steps of authentication to ensure that people working with our customers company data files are trusted.</p>
+        <p><strong>The steps are:</strong></p>
+        <ul>
+          <li>First: as a developer you require an <strong>API KEY</strong> and <strong>SECRET</strong></li>
+          <li>Next: your app needs to allow the user to grant you permission to access their company files</li>
+          <li>Next: you need to get an Access Token (and refresh token) from the MYOB OAUTH server</li>
+          <li>Lastly: you use the token to request company files, which the user needs to log into individually</li>
+        </ul>
+        <h2>class.myob_oauth.php</h2>
+        <p>We've created the base of a class we'll extend over time. This basic class will do all the heavy lifting for you and make it much quicker and simpler for you to get going.</p>
+        <p>Before using the class you will need to redirect the user to the MYOB my.myob login. Once they've logged in, they will be redirected to the URL you registered your KEY with, and a code will be supplied that you use for requesting an access token.</p>
+        <pre><code>https://secure.myob.com/oauth2/account/authorize?client_id=[YOUR API KEY]&redirect_uri=[YOUR REDIRECT URI]&response_type=code&scope=CompanyFile</code></pre>
+        <p class="muted">Note: the redirect uri MUST match the url you supplied when you registered</p>
+        <p>To use simply, include the class, create the object and call the apropriate functions.</p>
+        <pre>
+          <code class="php">
+            include_once('includes/class.myob_oauth.php');
+            $oauth = new myob_api_oauth();
+            $oauth_tokens = $oauth->getAccessToken($api_key, $api_secret, $redirect_url, $api_access_code, $api_scope);
+          </code>
+        </pre>
+        <h2>Suggestions</h2>
+        <p>We would love it if someone would help us round our our <strong>class.myob_oauth.php</strong> right now it's been quickly put together to get you up and running, it's missing most of the normal error checking, and is pretty primiative.</p>
+        <p>Do you know how to write a really robust OAUTH interface class? Feel free to fork this project and add to it.</p>
 
         <p class="view"><a href="https://github.com/MYOB-Technology/AccountRight_OAUTH_sample_php">View the Project on GitHub <small>MYOB-Technology/AccountRight_OAUTH_sample_php</small></a></p>
 
@@ -306,7 +331,7 @@ div#footer {
         </ul>
       </header>
       <section>
-        <h1>AccountRight_OAUTH_sample_php</h1>
+        <h1>OAUTH with PHP for AccountRight API</h1>
 
 <p>A working sample written in PHP showing the OAUTH integration with AccountRight API</p>
       </section>
