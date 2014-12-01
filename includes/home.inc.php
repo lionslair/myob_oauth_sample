@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <h1>App Of Awesome</h1>
   <p class="lead">To make full use of the awsesomeness of the cloud, bring together the power of MYOB AccountRight Live and our App of Awesome and watch business financial magic happen.</p>
-  <a class="btn btn-large btn-success" href="https://secure.myob.com/oauth2/account/authorize?client_id=<?php echo api_key ?>&redirect_uri=<?php echo urlencode( redirect_url ); ?>&response_type=code&scope=CompanyFile">Click here to link with MYOB AccountRight Live now</a>
+  <a class="btn btn-large btn-success" href="https://secure.myob.com/oauth2/account/authorize?client_id=<?php echo api_key ?>&redirect_uri=<?php echo urlencode(redirect_url); ?>&response_type=code&scope=CompanyFile">Click here to link with MYOB AccountRight Live now</a>
 </div>
 
 <hr>
